@@ -1,0 +1,4 @@
+Can we extend base entity to automatically provide us the primary key and still store a copy as a foreign key inside
+our pojos?
+
+Can a patient have multiple accounts?

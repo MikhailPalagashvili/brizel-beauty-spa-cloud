@@ -25,7 +25,7 @@ public class AccountController {
 
     @GetMapping
     public String getAccount() {
-        return "login";
+        return "account";
     }
 
     @PostMapping("/login")

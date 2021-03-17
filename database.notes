@@ -1,0 +1,37 @@
+The purpose of brizel beauty spa database is to maintain the data we generate, and supply information that supports the services we provide to our patients.
+Preliminary Field List
+Service – cost, duration, pain scale, datatable.
+Service keeps track of the services the beauty spa provides.
+The table is important because it allows us to showcase the services that are provided right now by our company.
+Patient - First Name, Last Name, Birthday, Address datatable
+Patient tracks the patients that used our services.
+The table is important because it allows us to track when and what services the patients paid for.
+Appointment – date, time, service, expected price, discount, final price datatable
+Appointment tracks the appointments the patients make.
+The table is important because it helps maintain a schedule for available appointments as well as keep track of current appointments.
+
+            |Appointment   |Patient    |Service     |Account
+---------------------------------------------------------------------
+ Appointment|x                1:1        1:N        X
+ Patient    |1:N              x          1:N        1:1
+ Service    |1:N              1:N        x          x
+ Account    |x                1:1        x          x
+
+Can appointment own, has, is part of, and contain a patient? Yes
+Can a patient attend an appointment? Yes
+Can a service be part of an appointment? yes
+Can an appointment contain a service? yes
+Appointment - Patient = 1:N
+Appointment - Service = M:N
+Patient - Service = M:N
+Account - Patient = 1:1
+Appointment has a many to many relationship with Service
+We create a linking table called Service Appointment
+Patient has a many to many relationship with Service
+We create a linking table called Patient Service
+A Patient can have many appointments therefore we take the primary key from the patient table and place a copy of it
+into the Appointment table as foreign key.
+
+When a record in the (name of parent table) table is
+ deleted, what should happen to related records in the
+ (name of child table) table?
